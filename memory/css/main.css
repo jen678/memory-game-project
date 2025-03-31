@@ -5,10 +5,14 @@ header {
     color: green;
     font-style: italic;
     font-size: 40px;
+    height: 15vh;
 }
 
-.container > div {
+.parent {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .container {
@@ -20,6 +24,20 @@ header {
     height: 500px;
     border: 5px solid #4faf45; 
     background-color: rgb(151, 248, 151);
+}
+
+.p, .How-to-play{
+    display: flex;
+    justify-content: flex-start;
+    color: blue;
+    font-size: 30px;
+}
+
+.left-align {
+    display: flex;
+    justify-content: flex-start;
+    color: blue;
+    font-size: 30px;
 }
 
 .button {
@@ -52,9 +70,15 @@ header {
     font-size: 24px;
 }
 
-#play-again {
+#play-again  {
     background-color: green;
     width: 80px;
     height: 45px;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+
+#game-screen, #end-of-game-screen {
     text-align: center;
 }

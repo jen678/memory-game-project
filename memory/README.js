@@ -56,7 +56,7 @@
 // Insert your Technologies Used here:
 // ? links used to help with the project
 // ? https://www.w3schools.com/cssref/tryit.php?filename=trycss3_flex-direction
-
+// ? https://www.w3schools.com/css/tryit.asp?filename=trycss_grid
 
 
 
@@ -124,6 +124,7 @@
 
 
 // Challenges
+// I experienced difficulty linking my fodlers i.e my css to my main page due to it not using the correct path. Once I understood where I was going wrong with linking my folders, I understood my problem aswell clearly and was able to rectify it immediately. 
 
 // Instructions
 

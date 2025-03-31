@@ -6,43 +6,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Memory Game</title>
     <link rel="stylesheet" href="./css/main.css">
-    <script defer src="app.js" charset="utf-8"></script>
+    <script defer src="js/app.js" charset="utf-8"></script>
 </head>
 
 <body>
     <header>
+        <div id="game-screen">
         <h1>Memory</h1>
+        <p class ="How-to-play"></p>
+        <p2 class="left-align">
+            Match as many 
+            squares as 
+            possible 
+            within the 
+            1MIN time frame
+            
+            The squares that 
+            you DO match will 
+            stay visible 
+            
+            If the squares 
+            selected 
+            do NOT match, 
+            they will be 
+            concealed again. 
+            
+            Match as many 
+            squares as 
+            possible 
+            within the 
+            1MIN time frame
+            
+            The squares that 
+            you DO match will 
+            stay visible 
+            
+            If the squares 
+            selected 
+            do NOT match, 
+            they will be 
+            concealed again</p2>
     </header>
-    <div class="container">
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
-        <button class="square"></button>
+    <div class="parent">
+        <div class="container">
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+            <button class="square"></button>
+        </div>
+    </div>
     </div>
     </div>
     </div>
     <button id="start-playing">Start Playing</button>
     <div id="countdown-container" class="hidden">
         <span id="countdown">60 sec</span>
-    <button id="play-again">Play Again</button>
+        <button id="play-again">Play Again</button>
     </div>
     </div>
+    <div id="end-of-game-screen" style="display: none;"></div>
 </body>
 
 </html>
