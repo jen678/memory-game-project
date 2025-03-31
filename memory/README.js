@@ -54,7 +54,8 @@
 // List every technology you used to complete the project. This can be in one long list, or broken down into categories (Back End, Front End, Development Tools).
 
 // Insert your Technologies Used here:
-
+// ? links used to help with the project
+// ? https://www.w3schools.com/cssref/tryit.php?filename=trycss3_flex-direction
 
 
 

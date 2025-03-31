@@ -1,0 +1,60 @@
+header {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: green;
+    font-style: italic;
+    font-size: 40px;
+}
+
+.container > div {
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(5, auto);
+    gap: 5px;
+    width: 400px;
+    height: 500px;
+    border: 5px solid #4faf45; 
+    background-color: rgb(151, 248, 151);
+}
+
+.button {
+    display: flex;
+    font-style: normal;
+    text-align: center
+}
+
+#start-playing {
+    text-align: center;
+    color: green;
+    position: center;
+}
+
+.hidden {
+    display: none;
+}
+
+#countdown-container {
+    position: center;
+    border: 10px solid rgb(251, 137, 7);
+    background-color: orange;
+    color: rgb(3, 2, 2);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+}
+
+#play-again {
+    background-color: green;
+    width: 80px;
+    height: 45px;
+    text-align: center;
+}
