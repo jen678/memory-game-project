@@ -26,18 +26,21 @@ header {
     background-color: rgb(151, 248, 151);
 }
 
-.p, .How-to-play{
+.p1 {
     display: flex;
+    position: sticky;
     justify-content: flex-start;
     color: blue;
     font-size: 30px;
 }
 
 .left-align {
-    display: flex;
+    display: flex, left;
     justify-content: flex-start;
-    color: blue;
-    font-size: 30px;
+    color: rgb(225, 133, 20);
+    font-size: 25px;
+    position: fixed, left;
+    text-align: center;
 }
 
 .button {
