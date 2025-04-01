@@ -31,45 +31,87 @@
 // The timer will show the user how long it took them
 
 
+
+
+
+
+
+
+
+
 // --------CACHED ELEMENT REFERENCES----------
 
-// const btnElement = document.querySelectorAll('.buttons')
-// play agin button has to have a callbackfunction to return back to the game page 
+const squareElements = document.querySelectorAll('.square');
+let firstClick = null;
+let secondClick = null;
+let lockBoard = false;
+
+const startBtn = document.getElementById("Start-Playing");
+const playAgainBtn = document.getElementById("Play-Again")
+
+document.getElementById("Start-Playing")
+document.getElementById('Play-Again')
+
+const imageList = [
+    "red-book.jpg", "cartoon-heart.jpg", "house.jpg", "coffee.jpg",
+    "flower-bouqet.jpg", "bed.jpg", "blue-car.jpg", "laptop.jpg",
+    "horse.jpg", "coloring-pencils.jpg", "red-book.jpg", "cartoon-heart.jpg", "house.jpg", "coffee.jpg",
+    "flower-bouqet.jpg", "bed.jpg", "blue-car.jpg", "laptop.jpg",
+    "horse.jpg", "coloring-pencils.jpg"
+];
 
 
-
-
-
-
+    // play agin button has to have a callbackfunction to return back to the game page 
 
 // ----------FUNCTIONS----------
 
+function shuffleImages() {
+    for (let i = imageList.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [imageList[i], imageList[j]] = imageList[j], [imageList[i]];
+    }
+}
+
+function assignImages() {
+    shuffleImages();
+    squareElements.forEach((square, index) => {
+        square.innerHTML = '<img src="${imageList[index]}" alt="memory image">';
+    });
+}
 
 // div class for "game" 
-// <button className="square"></button> (20 of these)
+// <button className="square"></button> (20 of these) you can use selectorqueryAll
 // btnElement.forEach((test)) => {
 // }
 
 // setInterval function for timer
 
-
+// square img has to be set to display: none; in css 
+// to allow it to remain hidden until the matched squares are clicked and macted. 
 
 
 
 
 // -----------EVENT LISTENNERS-----------
 
-// startButton.addEventListener()
+buttonEl.addEventListener('click', startPlaying)
+buttonEl.addEventListener('click', playAgain)
+
+function startPlaying() {
+}
+
+function checkWinner() {
+}
+
+function playAgain() {
+}
+
+function timer() {
+}
+
+
+console.log(checkWinner)
+assignImages()
+
 // playAgain.addEventListener()
-
-// function checkWinner(){
-// }
-
-// function playAgain() {
-// }
-
-// function timer() {
-// }
-
-// console.log(checkWinner)
 

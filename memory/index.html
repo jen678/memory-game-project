@@ -11,56 +11,60 @@
 
 <body>
     <header>
-        <div id="game-screen">
         <h1>Memory</h1>
-        <p class="left-align">
-            'How to play'
-
-            You have 60 secods to match
-            as many squares as possible.
-            
-            The squares that 
-            you DO match will 
-            stay open.
-            
-            The squares that do NOT match 
-            will be concealed again. 
-            </p>
+        <p class="subtitle">Let's play!</p>
     </header>
-    <div class="parent">
-        <div class="container">
-            <button class="square"><img src="images/redbook.jpg"></button>
-            <button class="square"><img src="images/cartoonheart.jpg"></button>
-            <button class="square"><img src="images/house.jpg"></button>
-            <button class="square"><img src="images/coffee.jpg"></button>
-            <button class="square"><img src="images/flowerbouqet.jpg"></button>
-            <button class="square"><img src="images/bed.jpg"></button>
-            <button class="square"><img src="images/blue-car.jpg"></button>
-            <button class="square"><img src="images/laptop"></button>
-            <button class="square"><img src="images/horse.jpg"></button>
-            <button class="square"><img src="images/coloring-pencils.jpg"></button>
-            <button class="square"><img src="images/horse.jpg"></button>
-            <button class="square"><img src="images/coloring-pencils.jpg"></button>
-            <button class="square"><img src="images/blue-car.jpg"></button>
-            <button class="square"><img src="images/laptop"></button>
-            <button class="square"><img src="images/bed.jpg"></button>
-            <button class="square"><img src="images/flowerbouqet.jpg"></button>
-            <button class="square"><img src="images/coffee.jpg"></button>
-            <button class="square"><img src="images/house.jpg"></button>
-            <button class="square"><img src="images/cartoonheart.jpg"></button>
-            <button class="square"><img src="images/redbook.jpg"></button>
+
+    <!-- main section -->
+    <main class="parent">
+        <div class="instructions">
+            <h2>How to play:</h2>
+            <p class="left-align">
+                You have 60 secods to match
+                as many squares as possible.
+
+                The squares that
+                you DO match will
+                stay open.
+
+                The squares that do NOT match
+                will be concealed again until they are matched.
+            </p>
         </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    <button id="start-playing">Start Playing</button>
-    <div id="countdown-container" class="hidden">
-        <span id="countdown">60 sec</span>
-        <button id="play-again">Play Again</button>
-    </div>
-    </div>
-    <div id="end-of-game-screen" style="display: none;"></div>
+        <div class="container">
+            <button class="square"><img src="images/red-book.jpg"></button>
+            <button class="square"><img src="images/cartoon-heart.jpg"></button>
+            <button class="square"><img src="images/house.jpg"></button>
+            <button class="square"><img src="images/coffee.jpg"></button>
+            <button class="square"><img src="images/flower-bouqet.jpg"></button>
+            <button class="square"><img src="images/bed.jpg"></button>
+            <button class="square"><img src="images/blue-car.jpg"></button>
+            <button class="square"><img src="images/laptop.jpg"></button>
+            <button class="square"><img src="images/horse.jpg"></button>
+            <button class="square"><img src="images/coloring-pencils.jpg"></button>
+            <button class="square"><img src="images/horse.jpg"></button>
+            <button class="square"><img src="images/coloring-pencils.jpg"></button>
+            <button class="square"><img src="images/blue-car.jpg"></button>
+            <button class="square"><img src="images/laptop.jpg"></button>
+            <button class="square"><img src="images/bed.jpg"></button>
+            <button class="square"><img src="images/flower-bouqet.jpg"></button>
+            <button class="square"><img src="images/coffee.jpg"></button>
+            <button class="square"><img src="images/house.jpg"></button>
+            <button class="square"><img src="images/cartoon-heart.jpg"></button>
+            <button class="square"><img src="images/red-book.jpg"></button>
+        </div>
+        <div id="end-of-game-screen" style="display: none;"></div>
+    </main>
+
+    <!-- footer section -->
+    <footer>
+        <button id="start-playing">Start Playing</button>
+        <div id="countdown-container" class="hidden">
+            <span id="countdown">60 sec</span>
+            <button id="play-again">Play Again</button>
+        </div>
+    </footer>
+  
 </body>
 
 </html>

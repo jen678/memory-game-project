@@ -57,6 +57,7 @@
 // ? links used to help with the project
 // ? https://www.w3schools.com/cssref/tryit.php?filename=trycss3_flex-direction
 // ? https://www.w3schools.com/css/tryit.asp?filename=trycss_grid
+// ? https://www.w3schools.com/howto/howto_js_image_grid.asp
 
 
 

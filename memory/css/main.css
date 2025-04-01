@@ -1,11 +1,20 @@
 header {
     display: flex;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
+    align-items: center;
+    gap: 5px;
     color: green;
     font-style: italic;
     font-size: 40px;
     height: 15vh;
+}
+
+h1, .subtitle {
+    text-align: center;
+    margin: 5px;
+    padding: 5px;
 }
 
 .parent {
@@ -13,6 +22,18 @@ header {
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+
+.instructions {
+    width: 150px;
+    height: 450px;
+    justify-content: center;
+    margin: 2px, 2px, 2px, 2px;
+    border: 2px solid rgb(50, 100, 216);
+    font-size: 12px;
+    text-align: center;
+    color: rgb(54, 111, 197);
 }
 
 .container {
@@ -26,33 +47,53 @@ header {
     background-color: rgb(151, 248, 151);
 }
 
-.p1 {
+.p {
     display: flex;
     position: sticky;
-    justify-content: flex-start;
+    justify-content: center;
     color: blue;
-    font-size: 30px;
+    font-size: 12px;
 }
 
 .left-align {
-    display: flex, left;
-    justify-content: flex-start;
+    display: flex;
+    justify-content: center;
     color: rgb(225, 133, 20);
-    font-size: 25px;
+    font-size: 20px;
     position: fixed, left;
     text-align: center;
 }
 
-.button {
+.square {
     display: flex;
+    align-items: center;
+    justify-content: center;
     font-style: normal;
-    text-align: center
+    text-align: center;
+}
+
+.square img {
+    width: 100%;
+    display: none;
+
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+#game-screen, #end-of-game-screen {
+    text-align: center;
 }
 
 #start-playing {
     text-align: center;
     color: green;
     position: center;
+    justify-content: center;
 }
 
 .hidden {
@@ -73,15 +114,12 @@ header {
     font-size: 24px;
 }
 
-#play-again  {
-    background-color: green;
-    width: 80px;
-    height: 45px;
+#play-again {
+    background-color: rgb(55, 231, 55);
+    width: 120px;
+    height: 40px;
+    font-size: 18px;
     text-align: center;
-    display: block;
-    margin: auto;
-}
-
-#game-screen, #end-of-game-screen {
-    text-align: center;
+    display:flex;
+    position:absolute;
 }
