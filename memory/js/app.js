@@ -41,7 +41,7 @@
 //   GRID/SQUARE MOVEMENTS
 
 const squareElements = document.querySelectorAll(".square");
-const startBtn = document.getElementById("Start-Playing");
+const startBtn = document.getElementById("start-playing");
 const playAgainBtn = document.getElementById("Play-Again")
 
 let firstClick = null;
@@ -89,10 +89,9 @@ assignImages();
 
 // click function for the start-playing button to work
 function startGame() {
-    function startPlayingtBtn.classList.add("hidden");
+    startBtn.classList.add("hidden");
     countdownContainer.classList.remove("hidden");
     square.forEach(square => square.classList.remove("hidden"))
-    startGame();
 }
 startBtn.addEventListener("click", startGame);
 
@@ -119,7 +118,7 @@ const countdownContainer = document.getElementById("cuntdow-container");
 const countdownDisplay = document.getElementById("countdown");
 const startPlayingBtn = document.getElementById("start-playing")
 
-function startTimer() {
+function startInterval() {
     countdownContainer.classList.remove("hidden");
     timeLeft = 60;
     countdownDisplay.textContent = '${timeLeft} sec';
@@ -132,10 +131,8 @@ function startTimer() {
             clearInterval(countdown);
             endGame("Oops! Try Again!");
         }
-    });
-}, 1000);
-countdown();
-
+    }, 1000);
+}
 playAgainBtn.addEventListener("click", playAgainBtn)
 
 
