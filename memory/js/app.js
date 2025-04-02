@@ -85,34 +85,39 @@ function assignImages() {
         square.innerHTML = '<img src="${imageList[index]}" alt="memory image"> style="display: none;">';
     });
 }
+assignImages();
 
 // click function for the start-playing button to work
 function startGame() {
-function starPlayingtBtn.classList.add("hidden");
-countdownContainer.classList.remove("hidden");
-square.forEach(square => square.classList.remove("hidden"))
-startGame();
-assignImages();
-startTimer();
+    function startPlayingtBtn.classList.add("hidden");
+    countdownContainer.classList.remove("hidden");
+    square.forEach(square => square.classList.remove("hidden"))
+    startGame();
 }
-
+startBtn.addEventListener("click", startGame);
 
 // function to check if it's a match
 // function to reset selection
 
 
-// -----------EVENT LISTENNERS-----------
 
+//  END GAAME FUNCTION
+
+function endGame() {
+    clearInterval(countdown);
+    playAgainBtn.classList.remove("hidden");
+}
 
 // TIMER 
 
 let countdown;
 let timeLeft = 60;
 let matchedPairs = 0;
+
 const totalPairs = document.querySelectorAll(".square").length / 2;
 const countdownContainer = document.getElementById("cuntdow-container");
 const countdownDisplay = document.getElementById("countdown");
-const startBtnEl = document.getElementById("start-playing")
+const startPlayingBtn = document.getElementById("start-playing")
 
 function startTimer() {
     countdownContainer.classList.remove("hidden");
@@ -126,8 +131,13 @@ function startTimer() {
         if (timeLeft <= 0) {
             clearInterval(countdown);
             endGame("Oops! Try Again!");
-        }})
-    }, 1000);
+        }
+    });
+}, 1000);
+countdown();
+
+playAgainBtn.addEventListener("click", playAgainBtn)
+
 
 
 function stopTimer() {
@@ -156,7 +166,7 @@ function handleSquareCLick(event) {
 
     if (!clickedImage) return;
     if (!clickedImage || clickedImage.style.display === "block") return;
-//  show the image
+    //  show the image
     clickedImage.style.display = "block";
 
     if (!firstClick) {
@@ -166,8 +176,7 @@ function handleSquareCLick(event) {
         lockBoard = true;
     }
 }
-
-
+squareBtn.addEventListener("click", display)
 // RESETTING GAME - play again button 
 
 function resetSelection() {
@@ -185,6 +194,8 @@ function resetGame() {
     });
     resetSelection()
 }
+
+playAgainBtn.addEventListener("click", () => location.reload());
 
 // doccument.getElementById("Play-Again").addEventListener("click", resetGame);
 // setInterval function for timer
