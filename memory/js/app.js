@@ -34,24 +34,33 @@
 
 
 
+// --------CACHED ELEMENT REFERENCES-----
 
 
 
+//   GRID/SQUARE MOVEMENTS
 
+const squareElements = document.querySelectorAll(".square");
+const startBtn = document.getElementById("Start-Playing");
+const playAgainBtn = document.getElementById("Play-Again")
 
-// --------CACHED ELEMENT REFERENCES----------
-
-const squareElements = document.querySelectorAll('.square');
 let firstClick = null;
 let secondClick = null;
 let lockBoard = false;
 
-const startBtn = document.getElementById("Start-Playing");
-const playAgainBtn = document.getElementById("Play-Again")
+startBtn.addEventListener("click", function () {
+    document.querySelectorAll(".square").forEach(square => {
+        square.classList.remove("hidden");
+    });
+});
 
-document.getElementById("Start-Playing")
-document.getElementById('Play-Again')
+document.querySelectorAll(".square").forEach(square => {
+    square.addEventListener("click", function () {
+        this.querySelector("img").classList.remove("hidden");
+    });
+});
 
+//  List of images 
 const imageList = [
     "red-book.jpg", "cartoon-heart.jpg", "house.jpg", "coffee.jpg",
     "flower-bouqet.jpg", "bed.jpg", "blue-car.jpg", "laptop.jpg",
@@ -60,11 +69,8 @@ const imageList = [
     "horse.jpg", "coloring-pencils.jpg"
 ];
 
-
-    // play agin button has to have a callbackfunction to return back to the game page 
-
 // ----------FUNCTIONS----------
-
+//  function to help move/shuffle images randomly 
 function shuffleImages() {
     for (let i = imageList.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -72,46 +78,121 @@ function shuffleImages() {
     }
 }
 
+// function extention to help assign images to the squares
 function assignImages() {
     shuffleImages();
     squareElements.forEach((square, index) => {
-        square.innerHTML = '<img src="${imageList[index]}" alt="memory image">';
+        square.innerHTML = '<img src="${imageList[index]}" alt="memory image"> style="display: none;">';
     });
 }
 
-// div class for "game" 
-// <button className="square"></button> (20 of these) you can use selectorqueryAll
-// btnElement.forEach((test)) => {
-// }
+// click function for the start-playing button to work
+function startGame() {
+function starPlayingtBtn.classList.add("hidden");
+countdownContainer.classList.remove("hidden");
+square.forEach(square => square.classList.remove("hidden"))
+startGame();
+assignImages();
+startTimer();
+}
 
-// setInterval function for timer
 
-// square img has to be set to display: none; in css 
-// to allow it to remain hidden until the matched squares are clicked and macted. 
-
-
+// function to check if it's a match
+// function to reset selection
 
 
 // -----------EVENT LISTENNERS-----------
 
-buttonEl.addEventListener('click', startPlaying)
-buttonEl.addEventListener('click', playAgain)
 
-function startPlaying() {
+// TIMER 
+
+let countdown;
+let timeLeft = 60;
+let matchedPairs = 0;
+const totalPairs = document.querySelectorAll(".square").length / 2;
+const countdownContainer = document.getElementById("cuntdow-container");
+const countdownDisplay = document.getElementById("countdown");
+const startBtnEl = document.getElementById("start-playing")
+
+function startTimer() {
+    countdownContainer.classList.remove("hidden");
+    timeLeft = 60;
+    countdownDisplay.textContent = '${timeLeft} sec';
+
+    countdown = setInterval(() => {
+        timeLeft--;
+        countdownDisplay.textContent = '${timeLeft} sec';
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+            endGame("Oops! Try Again!");
+        }})
+    }, 1000);
+
+
+function stopTimer() {
+    clearInterval(countdown);
+    countdownContainer.classList.add("hidden");
+}
+function checkForMatch() {
+    if (firstClick && secondClick) {
+        if (firstClick && secondClick) {
+            if (firstClick.src === secondClick.src) {
+                matchedPairs++;
+                if (matchedPairs === totalPairs) {
+                    endGame("YOU DID IT!")
+                }
+            }
+        }
+    }
 }
 
-function checkWinner() {
+//  function to handle clicks on the squares
+function handleSquareCLick(event) {
+    if (lockBoard) return;
+
+    let clickedSquare = event.currentTarget;
+    let clickedImage = clickedSquare.querySelector("img");
+
+    if (!clickedImage) return;
+    if (!clickedImage || clickedImage.style.display === "block") return;
+//  show the image
+    clickedImage.style.display = "block";
+
+    if (!firstClick) {
+        firstClick = clickedImage;
+    } else {
+        secondClick = clickedImage;
+        lockBoard = true;
+    }
 }
 
-function playAgain() {
+
+// RESETTING GAME - play again button 
+
+function resetSelection() {
+    firstClick = null;
+    secondClick = null;
+    lockBoard = false;
 }
 
-function timer() {
+
+function resetGame() {
+    assignImages();
+    squareElements.forEach(square => {
+        let img = square.querySelector("img");
+        if (img) img.style.display = "none";
+    });
+    resetSelection()
 }
 
-
-console.log(checkWinner)
-assignImages()
-
+// doccument.getElementById("Play-Again").addEventListener("click", resetGame);
+// setInterval function for timer
+// square img has to be set to display: none; in css 
+// for it to remain hidden until the matched squares are clicked 
+// and macted after clicking start playing.
+// function startPlaying()
+// console.log(checkWinner)
+// assignImages()
 // playAgain.addEventListener()
 

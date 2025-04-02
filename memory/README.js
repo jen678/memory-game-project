@@ -58,6 +58,7 @@
 // ? https://www.w3schools.com/cssref/tryit.php?filename=trycss3_flex-direction
 // ? https://www.w3schools.com/css/tryit.asp?filename=trycss_grid
 // ? https://www.w3schools.com/howto/howto_js_image_grid.asp
+// ? https://www.w3schools.com/js/js_htmldom_eventlistener.asp#:~:text=With%20the%20addEventListener()%20method,event%20uses%20the%20capturing%20propagation.
 
 
 
