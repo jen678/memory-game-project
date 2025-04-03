@@ -36,7 +36,8 @@ h1, .subtitle {
     width: 150px;
     height: 450px;
     justify-content: center;
-    margin: 2px, 2px, 2px, 2px;
+    margin: 1px, 1px, 1px, 1px;
+    margin-right: auto;
     border: 2px solid rgb(50, 100, 216);
     font-size: 12px;
     text-align: center;
@@ -44,10 +45,9 @@ h1, .subtitle {
 }
 
 .container {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-template-rows: repeat(5, auto);
-    gap: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 400px;
     height: 500px;
     border: 5px solid #4faf45; 
@@ -77,10 +77,13 @@ h1, .subtitle {
     justify-content: center;
     font-style: normal;
     text-align: center;
+    width: calc(25% - (15px / 4));
+    height: calc(20% - (20px / 5));
 }
 
 .square img {
-    width: 100%;
+    max-width: 100%;
+    object-fit: contain;
     display: none;
 
 }

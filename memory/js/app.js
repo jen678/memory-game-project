@@ -54,10 +54,8 @@ startBtn.addEventListener("click", function () {
     });
 });
 
-document.querySelectorAll(".square").forEach(square => {
-    square.addEventListener("click", function () {
-        this.querySelector("img").classList.remove("hidden");
-    });
+squareElements.forEach(square => {
+    square.addEventListener("click", handleSquareCLick);
 });
 
 //  List of images 
@@ -74,7 +72,6 @@ const imageList = [
 function shuffleImages() {
     for (let i = imageList.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
-        [imageList[i], imageList[j]] = imageList[j], [imageList[i]];
     }
 }
 
@@ -82,7 +79,7 @@ function shuffleImages() {
 function assignImages() {
     shuffleImages();
     squareElements.forEach((square, index) => {
-        square.innerHTML = '<img src="${imageList[index]}" alt="memory image"> style="display: none;">';
+        square.innerHTML = `<img src="images/${imageList[index]}" alt="memory image" style="display: none;">`;
     });
 }
 assignImages();
@@ -116,7 +113,6 @@ let matchedPairs = 0;
 const totalPairs = document.querySelectorAll(".square").length / 2;
 const countdownContainer = document.getElementById("cuntdow-container");
 const countdownDisplay = document.getElementById("countdown");
-const startPlayingBtn = document.getElementById("start-playing")
 
 function startInterval() {
     countdownContainer.classList.remove("hidden");
@@ -133,7 +129,8 @@ function startInterval() {
         }
     }, 1000);
 }
-playAgainBtn.addEventListener("click", playAgainBtn)
+
+startBtn.addEventListener("click", playAgainBtn)
 
 
 
@@ -154,26 +151,18 @@ function checkForMatch() {
     }
 }
 
+
 //  function to handle clicks on the squares
 function handleSquareCLick(event) {
-    if (lockBoard) return;
 
-    let clickedSquare = event.currentTarget;
-    let clickedImage = clickedSquare.querySelector("img");
+    // the square img should open when clicked.
+    // after every two clicks, the game should check if they are a match
+    // if the square images selected match, then let it stay open.
+    // if they do not match, they go back to staying hidden. 
 
-    if (!clickedImage) return;
-    if (!clickedImage || clickedImage.style.display === "block") return;
-    //  show the image
-    clickedImage.style.display = "block";
 
-    if (!firstClick) {
-        firstClick = clickedImage;
-    } else {
-        secondClick = clickedImage;
-        lockBoard = true;
-    }
 }
-squareBtn.addEventListener("click", display)
+
 // RESETTING GAME - play again button 
 
 function resetSelection() {
@@ -192,7 +181,6 @@ function resetGame() {
     resetSelection()
 }
 
-playAgainBtn.addEventListener("click", () => location.reload());
 
 // doccument.getElementById("Play-Again").addEventListener("click", resetGame);
 // setInterval function for timer
